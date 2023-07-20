@@ -116,7 +116,7 @@ public class ConnectionUtil {
 			System.out.println("masterDataSource: "+masterDataSource);
 		}
 		
-		String replicaJdbcUrl = new StringBuilder().append("jdbc:mysql://localhost:3306/").append("pypepro").toString();
+		String replicaJdbcUrl = new StringBuilder().append("jdbc:mysql://localhost:3306/").append("test").toString();
 		if(StringUtils.isNotBlank(replicaJdbcUrl)) {
 			HikariConfig hikariConfig =  new HikariConfig();
 			hikariConfig.setJdbcUrl(replicaJdbcUrl);
