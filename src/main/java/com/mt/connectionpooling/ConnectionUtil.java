@@ -1,9 +1,7 @@
 package com.mt.connectionpooling;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,14 +82,14 @@ public class ConnectionUtil {
 				hikariDataSource = masterDataSource.get(buildDataSourceKey());
 			}
 		}
-
+		System.out.println("getWriteConnection: hikariDataSource:"+hikariDataSource);
 		return hikariDataSource == null ? null : hikariDataSource.getConnection();
 	}
 	
 	
 	private static void buildDataSource() {
 
-		String masterJdbcUrl = new StringBuilder().append("jdbc:mysql://localhost:3306/").append("pypepro").toString();
+		String masterJdbcUrl = new StringBuilder().append("jdbc:mysql://localhost:3306/").append("test").toString();
 		
 		if(StringUtils.isNotBlank(masterJdbcUrl)) {
 			
